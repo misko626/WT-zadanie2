@@ -6,7 +6,7 @@
  * NAV 
  */
 
- .menu-icon {
+ .menu-icon2 {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -14,7 +14,7 @@
   z-index: 10000;
 }
 
-.nav-container {
+.nav-container2 {
   position: fixed;
   top: 0;
   left: 0;
@@ -31,7 +31,7 @@
   /* border: 2px solid red; */
 }
 
-.nav-container .nav-bar {
+.nav-container2 .nav-bar2 {
   width: 90%;
   height: 60px;
   overflow: hidden;
@@ -41,13 +41,13 @@
   transition: all 0.5s ease;
 }
 
-.nav-container .nav-bar .nav-item {
+.nav-container2 .nav-bar2 .nav-item2 {
   display: inline;
   margin: 15px;
   align-items: center;
 }
 
-.nav-container .nav-bar .nav-item a {
+.nav-container2 .nav-bar2 .nav-item2 a {
   font-size: 18px;
   font-family: "Poppins";
   color: black;
@@ -56,19 +56,19 @@
   
 }
 
-.nav-container .nav-bar .nav-item .active-link{
+.nav-container2 .nav-bar2 .nav-item2 .active-link2{
   color: purple;
   font-weight: bold;
 }
 
-.nav-container .nav-bar .nav-item a img {
+.nav-container2 .nav-bar2 .nav-item2 a img {
   margin: 0 2% 0 10%;
 }
 
 
 /*navbar mobile */
 
-.nav-container-mobile {
+.nav-container-mobile2 {
   display: block;
   position: absolute;
   top: 0;
@@ -83,7 +83,7 @@
     rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 
-.nav-container-mobile .nav-bar {
+.nav-container-mobile2 .nav-bar2 {
   overflow: hidden;
   margin: auto;
   text-align: center;
@@ -93,16 +93,16 @@
   justify-content: center;
 }
 
-.nav-container-mobile .nav-list {
+.nav-container-mobile2 .nav-list {
   list-style: none;
   line-height: 30px;
 }
 
-.nav-container-mobile .nav-item {
+.nav-container-mobile2 .nav-item2 {
   margin: 15px;
 }
 
-.nav-container-mobile .nav-item a {
+.nav-container-mobile2 .nav-item2 a {
   font-size: 18px;
   font-family: "nunito-extra-bold";
   color: black;
@@ -111,7 +111,7 @@
   border-bottom: 2px solid rgba(4, 4, 4, 0.427);
 }
 
-.nav-container-mobile .nav-item .nav-link-search {
+.nav-container-mobile2 .nav-item2 .nav-link-search2 {
   background: rgb(61, 46, 128);
   background: linear-gradient(
     164deg,
@@ -136,17 +136,17 @@
 /* tablet */
 
 @media (max-width: 850px) {
-  .menu-icon {
+  .menu-icon2 {
     display: block;
   }
 
-  .nav-container {
+  .nav-container2 {
     display: none;
   }
 }
 
 @media (max-width: 550px) {
-  .main-header {
+  .main-header2 {
     min-height: 80vh;
   }
 }

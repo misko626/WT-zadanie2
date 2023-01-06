@@ -1,16 +1,8 @@
 import { Injectable } from '@angular/core';
 import { FamilyMember } from '../shared/model/family-member.model';
 
-import {
-  addDoc,
-  deleteDoc,
-  updateDoc,
-  collectionData,
-  doc,
-  Firestore,
-} from '@angular/fire/firestore';
-import { collection } from '@firebase/firestore';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Injectable({
   providedIn: 'root',
@@ -18,32 +10,58 @@ import { Observable } from 'rxjs';
 export class FamilyMemberService {
   databasePath: string = 'family-members';
 
-  constructor(private firestore: Firestore) {}
+  constructor(private angularFirestore: AngularFirestore) {}
 
-  addFamilyMember(familyMember: FamilyMember) {
-    familyMember.id = doc(collection(this.firestore, 'id')).id;
-    return addDoc(collection(this.firestore, this.databasePath), familyMember);
+  addFamilyMember(familyMember: any) {
+    return new Promise<FamilyMember>((resolve, reject) => {
+      this.angularFirestore
+        .collection('family-members')
+        .add(familyMember)
+        .then(
+          (response) => {
+            console.log(response);
+          },
+          (error) => {
+            reject(error);
+          }
+        );
+    });
   }
 
-  getAllMembers(): Observable<FamilyMember[]> {
-    let membersRef = collection(this.firestore, this.databasePath);
-    return collectionData(membersRef, { idField: 'id' }) as Observable<
-      FamilyMember[]
-    >;
+  getAllMembers() {
+    return this.angularFirestore
+      .collection(this.databasePath)
+      .snapshotChanges();
   }
 
-  deleteFamilyMember(familyMember: FamilyMember) {
-    let memberRef = doc(
-      collection(this.firestore, `${this.databasePath}/${familyMember.id}`)
-    );
-    return deleteDoc(memberRef);
+  deleteItem(id: string) {
+    console.log(id);
+
+    return this.angularFirestore
+      .collection(this.databasePath)
+      .doc(id)
+      .delete()
+      .then(() => {
+        console.log('Document successfully deleted!');
+      })
+      .catch((error) => {
+        console.error('Error removing document: ', error);
+      });
   }
 
-  updateFamilyMember(familyMember: FamilyMember, familyMembers: any) {
-    let memberRef = doc(
-      this.firestore,
-      `${this.databasePath}/${familyMember.id}`
-    );
-    return updateDoc(memberRef, familyMembers);
+  updateFamilyMember(familyMember: any, id: string) {
+    console.log(familyMember.name);
+    console.log(familyMember.surname);
+    console.log(familyMember.age);
+    console.log(familyMember.typeOfMembership);
+    console.log(id);
+    
+    
+    return this.angularFirestore.collection(this.databasePath).doc(id).update({
+      name: familyMember.name,
+      surname: familyMember.surname,
+      age: familyMember.age,
+      typeOfMembership: familyMember.typeOfMembership,
+    });
   }
 }

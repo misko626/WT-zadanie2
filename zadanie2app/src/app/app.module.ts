@@ -19,8 +19,18 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { FirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
+import { AngularFireModule } from '@angular/fire/compat';
+
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 import { CardModule } from 'primeng/card';
+import { ToolbarModule } from 'primeng/toolbar';
+import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 @NgModule({
   declarations: [
@@ -38,14 +48,22 @@ import { CardModule } from 'primeng/card';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     FirestoreModule,
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    provideFirestore(() => getFirestore()),
-   
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    // provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    // provideFirestore(() => getFirestore()),
+    CardModule,
+    ToolbarModule,
+    ButtonModule,
+    TableModule,
+    ToastModule,
+    ConfirmDialogModule,
   ],
-  providers: [],
+  providers: [MessageService, ConfirmationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
