@@ -1,0 +1,127 @@
+.content-container {
+  position: relative;
+  width: 90vw;
+  display: flex;
+  min-height: 80%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* border: 2px solid red; */
+  margin: 100px 0 50px 0;
+}
+
+.header-heading {
+  width: 30%;
+  min-width: 300px;
+  height: 50%;
+}
+
+.header-heading h1,
+p {
+  animation: shake-heading 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+.header-heading h1 {
+  font-family: nunito-extra-bold;
+  font-size: 3em;
+  margin-bottom: 50px;
+}
+
+.header-heading p {
+  font-family: nunito-medium;
+  font-size: 1.3em;
+  margin-bottom: 30px;
+}
+
+.read-more {
+  text-decoration: none;
+  color: #fff;
+  background: rgb(61, 46, 128);
+  background: linear-gradient(
+    164deg,
+    rgba(61, 46, 128, 1) 39%,
+    rgba(164, 33, 113, 1) 100%
+  );
+  text-transform: uppercase;
+  padding: 10px 10px 10px 10px;
+  border-radius: 35px;
+  transition: all 0.5s ease;
+  animation: pop-in 2s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  opacity: 1;
+}
+
+.header-image img {
+  width: 50vw;
+  min-width: 450px;
+  transform: translateX(100px);
+  opacity: 0;
+  animation: welcome-heading-img 1s forwards 0.5s;
+}
+
+
+
+/*
+ * MEDIA Queries
+ */
+
+/* large */
+@media (max-width: 1400px) {
+  .content-container{
+    width: 90vw;
+    justify-content: space-around;
+  }
+}
+
+/* tablet */
+
+@media (max-width: 850px) {
+  
+  .content-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+  .header-image img{
+    width: 80%;
+    /* border: 1px solid red; */
+    margin-top: 20px;
+  }
+
+  .header-heading {
+    width: 80%;
+  }
+  .header-heading h1 {
+    margin-bottom: 40px;
+  }
+
+}
+
+@media (max-width: 550px) {
+  .main-header {
+    min-height: 80vh;
+  }
+
+  .header-heading h1{
+    font-size: 2em;
+  }
+
+  .header-heading p{
+    font-size: 1em;
+  }
+
+  .header-image img {
+    min-width: 350px;
+    margin-top: 100px;
+  }
+}
+
+@keyframes welcome-heading-img {
+  to {
+    transform: translateY(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

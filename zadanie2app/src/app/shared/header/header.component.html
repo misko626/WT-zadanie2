@@ -1,0 +1,46 @@
+<header class="main-header">
+  <img
+    class="menu-icon"
+    src="./assets/icons8-menu.svg"
+    alt="Menu obrázok"
+    title="menu"
+    onclick="onClickMenu()"
+  />
+  <div id="navContainer" class="nav-container">
+    <nav class="nav-bar">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/home"
+            routerLinkActive="active-link"
+            title="Táto stránka"
+          >
+            DOMOV</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/database-list"
+            routerLinkActive="active-link"
+            title="Prechod na databazu"
+          >
+            Databaza
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/contact"
+            routerLinkActive="active-link"
+            title="Prechod na kontakt stránku"
+          >
+            Kontakt</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

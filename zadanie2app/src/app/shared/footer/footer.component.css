@@ -1,0 +1,33 @@
+/*
+ * FOOTER
+ */
+
+.main-footer {
+  height: 100px;
+  width: 98vw;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer-line {
+  width: 30%;
+  margin-bottom: 30px;
+}
+
+.main-footer span a {
+  text-decoration: none;
+  font-family: nunito-extra-bold;
+  color: rgb(134, 19, 176);
+}
+.imagesCreator {
+  text-decoration: none;
+  color: black;
+}
+
+.imagesCreator span {
+  font-family: nunito-extra-bold;
+  color: blueviolet;
+}

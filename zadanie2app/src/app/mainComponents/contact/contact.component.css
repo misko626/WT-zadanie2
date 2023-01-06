@@ -1,0 +1,19 @@
+.contact-container {
+  padding: 10px 0 0 0;
+  max-width: 100vw;
+  min-height: 100vh;
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.line {
+  width: 80%;
+  height: 3px;
+  background-color: rgba(33, 33, 33, 0.284);
+  margin-left: 10%;
+  border: none;
+  z-index: 100;
+}

@@ -1,0 +1,85 @@
+/*
+ * SECTION Frameworks
+ */
+
+.framework-section {
+  text-align: center;
+  width: 98vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* border: 2px solid red; */
+}
+
+.framework-container {
+  font-display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  opacity: 1;
+  transition: 1s linear;
+}
+
+
+.framework-section h2 {
+  font-family: nunito-extra-bold;
+  font-size: 3em;
+  margin-bottom: 30px;
+}
+
+.framework-section p {
+  font-size: 1.3em;
+  margin-bottom: 100px;
+  font-family: nunito-medium;
+}
+
+.framework-container img {
+  width: 23%;
+  /* border: 2px solid red; */
+  margin-bottom: 30px;
+  transition: all 0.5s ease;
+}
+
+.framework-container img:hover {
+  transform: scale(1.1);
+}
+
+/*
+ * MEDIA Queries
+ */
+
+
+/* tablet */
+
+@media (max-width: 850px) {
+
+
+  .framework-section h2 {
+    width: 80%;
+  }
+  
+
+  .framework-section {
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 550px) {
+  
+  .framework-section h2 {
+    font-size: 2em;
+  }
+
+  .framework-container {
+    flex-direction: column;
+  }
+
+  .framework-container img {
+    min-width: 200px;
+  }
+
+  .framework-section {
+    padding-top: 0;
+  }
+}
