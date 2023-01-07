@@ -36,7 +36,7 @@
   height: 60px;
   overflow: hidden;
   margin: auto;
-  padding-top: 5px;
+  padding-top: 15px;
   text-align: right;
   transition: all 0.5s ease;
 }
@@ -63,6 +63,11 @@
 
 .nav-container2 .nav-bar2 .nav-item2 a img {
   margin: 0 2% 0 10%;
+}
+
+.nav-container2 .nav-bar2 .nav-list2 {
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -93,7 +98,7 @@
   justify-content: center;
 }
 
-.nav-container-mobile2 .nav-list {
+.nav-container-mobile2 .nav-list2 {
   list-style: none;
   line-height: 30px;
 }
@@ -145,11 +150,7 @@
   }
 }
 
-@media (max-width: 550px) {
-  .main-header2 {
-    min-height: 80vh;
-  }
-}
+
 
 /*
  * ANIMATIONS keyframes

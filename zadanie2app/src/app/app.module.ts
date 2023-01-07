@@ -18,7 +18,7 @@ import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { FirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -31,6 +31,12 @@ import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { NewMemberFormComponent } from './mainComponents/database-list/new-member-form/new-member-form.component';
+import { AllMembersListComponent } from './mainComponents/database-list/all-members-list/all-members-list.component';
+import { DatabaseIntroComponent } from './mainComponents/database-list/database-intro/database-intro.component';
 
 @NgModule({
   declarations: [
@@ -45,11 +51,15 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     HomeFrameworksComponent,
     ContactIntroComponent,
     ContactFormComponent,
+    NewMemberFormComponent,
+    AllMembersListComponent,
+    DatabaseIntroComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule,
     FirestoreModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -62,6 +72,9 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     TableModule,
     ToastModule,
     ConfirmDialogModule,
+    DropdownModule,
+    InputTextModule,
+    InputNumberModule,
   ],
   providers: [MessageService, ConfirmationService],
   bootstrap: [AppComponent],

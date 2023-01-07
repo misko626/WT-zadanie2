@@ -1,0 +1,85 @@
+<p-toast></p-toast>
+<div class="admin-page">
+  <p-card
+    [header]="editmode ? 'Uprav pribuzneho' : 'Pridaj pribuzneho'"
+    subheader="Tu môžeš pridať alebo upraviť svojho príbuzného"
+  >
+    <div class="grid mb-5">
+      <div class="col-12">
+        <p-toolbar>
+          <div class="p-toolbar-group-left"></div>
+          <div class="p-toolbar-group-right">
+            <p-button
+              
+              styleClass="p-button-primary mr-2"
+              [label]="editmode ? 'Uprav' : 'Pridaj'"
+              icon="pi pi-plus"
+              (click)="onSubmit()"
+            ></p-button>
+            <p-button
+              styleClass="p-button-secondary"
+              label="Späť"
+              icon="pi pi-arrow-circle-left"
+              (click)="onClickBack()"
+            ></p-button>
+          </div>
+        </p-toolbar>
+      </div>
+    </div>
+    <div class="p-grid">
+      <div class="p-col-12">
+        <form [formGroup]="familyMemberForm">
+          <div class="p-fluid p-formgrid p-grid">
+            <div class="p-col-12">
+              <label for="name">Meno</label>
+              <br />
+
+              <input formControlName="name" id="name" type="text" pInputText />
+              <!-- <small
+                *ngIf="familyMemberForm.name.invalid && isSubmitted"
+                class="p-error"
+                >Name is required</small
+              > -->
+            </div>
+            <div class="p-col-12">
+              <label for="surname">Priezvisko</label><br />
+              <input formControlName="surname" id="surname" type="text" pInputText />
+            </div>
+            <div class="p-col-12">
+              <label for="age">Vek</label><br />
+              <p-inputNumber
+                formControlName="age"
+                id="age"
+                mode="decimal"
+                [useGrouping]="false"
+              >
+              </p-inputNumber>
+            </div>
+            <div class="field p-col-10">
+              <label for="typeOfMembership">Typ pribuzenstva</label><br />
+              <p-dropdown
+                [options]="typesOfFamilyMembers"
+                formControlName="typeOfMembership"
+                id="typeOfMembership"
+                [showClear]="true"
+                placeholder="Select a Category"
+              ></p-dropdown>
+
+              <!-- <small
+                  *ngIf="productForm.category.invalid && isSubmitted"
+                  class="p-error"
+                  >Category is required</small
+                > -->
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </p-card>
+</div>
+
+<p-confirmDialog
+  [style]="{ width: '50vw' }"
+  [baseZIndex]="10000"
+  rejectButtonStyleClass="p-button-text"
+></p-confirmDialog> 

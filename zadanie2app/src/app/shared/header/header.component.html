@@ -1,12 +1,13 @@
 <header class="main-header2">
   <img
+    #navImage
     class="menu-icon2"
     src="./assets/icons8-menu.svg"
     alt="Menu obrázok"
     title="menu"
-    onclick="onClickMenu()"
+    (click)="onClickMenu()"
   />
-  <div id="navContainer" class="nav-container2">
+  <div #navContainer id="navContainer" class="nav-container2">
     <nav class="nav-bar2">
       <ul class="nav-list2">
         <li class="nav-item2">

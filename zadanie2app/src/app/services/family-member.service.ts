@@ -28,6 +28,10 @@ export class FamilyMemberService {
     });
   }
 
+  getMember(id: string) {
+    return this.angularFirestore.collection(this.databasePath).doc(id).valueChanges();
+  }
+
   getAllMembers() {
     return this.angularFirestore
       .collection(this.databasePath)
